@@ -1,0 +1,11 @@
+{
+  "folders": {
+    "Nome da pasta no n8n": [
+      "workflow-id-1",
+      "workflow-id-2"
+    ]
+  },
+  "workflows": {
+    "workflow-id-3": "Outra pasta no n8n"
+  }
+}

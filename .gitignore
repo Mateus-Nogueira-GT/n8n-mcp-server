@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+.pytest_cache/
+.DS_Store
+backups/
+audit_logs/
+workflow_folders.json
+.dataless_recovery_backup/

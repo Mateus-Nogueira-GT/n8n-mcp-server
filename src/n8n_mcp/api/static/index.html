@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>n8n AI Ops</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>n8n AI Ops</h1>
+          <p id="health">Conectando...</p>
+        </div>
+        <div class="actions">
+          <button id="refreshWorkflows">Atualizar</button>
+          <a href="/docs" target="_blank" rel="noreferrer">API docs</a>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="panel workflows-panel">
+          <div class="panel-head">
+            <h2>Organização</h2>
+            <span id="workflowCount">0</span>
+          </div>
+          <div class="search-box">
+            <input id="workflowSearch" type="search" placeholder="Buscar workflow, cliente, grupo ou ID" autocomplete="off" />
+          </div>
+          <div id="workflowList" class="workflow-list"></div>
+        </aside>
+
+        <section class="workspace">
+          <div class="panel selected-panel">
+            <div class="panel-head">
+              <h2 id="selectedTitle">Selecione um workflow</h2>
+              <span id="selectedStatus"></span>
+            </div>
+            <div class="button-row">
+              <button id="backupBtn" disabled>Backup</button>
+              <button id="executionsBtn" disabled>Execuções</button>
+              <button id="analyzeBtn" disabled>Analisar falha</button>
+              <button id="proposeBtn" disabled>Propor correção</button>
+              <button id="applyBtn" disabled>Aprovar e aplicar</button>
+            </div>
+            <p id="applyHint" class="apply-hint muted">Selecione um workflow e gere uma proposta para liberar aplicação segura.</p>
+          </div>
+
+          <div class="grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Diagnostico</h2>
+              </div>
+              <pre id="analysisOutput">Nenhuma analise ainda.</pre>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Correcao proposta</h2>
+              </div>
+              <div id="proposalBrief" class="proposal-brief muted-box">Nenhuma proposta ainda.</div>
+              <div class="button-row proposal-actions">
+                <button id="proposalApplyBtn" disabled>Executar ajuste sugerido</button>
+              </div>
+              <pre id="proposalOutput">Nenhuma proposta ainda.</pre>
+            </section>
+          </div>
+
+          <div class="grid">
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Backups</h2>
+                <button id="refreshBackups">Atualizar</button>
+              </div>
+              <pre id="backupOutput">Nenhum backup carregado.</pre>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <h2>Auditoria</h2>
+                <button id="refreshAudit">Atualizar</button>
+              </div>
+              <pre id="auditOutput">Nenhum evento carregado.</pre>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
